@@ -1,0 +1,93 @@
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td { box-sizing: border-box;margin:0; padding:0; }
+body, button, input, select, textarea { font:12px/1.5tahoma, arial, \5b8b\4f53; }
+h1, h2, h3, h4, h5, h6{ font-size:100%; }
+address, cite, dfn, em, var { font-style:normal; }
+code, kbd, pre, samp { font-family:couriernew, courier, monospace; }
+small{ font-size:12px; }
+ul, ol { list-style:none; }
+a { text-decoration:none; }
+a:hover { text-decoration:initial; }
+sup { vertical-align:text-top; }
+sub{ vertical-align:text-bottom; }
+legend { color:#000; }
+fieldset, img { border:0; }
+button, input, select, textarea { font-size:100%; border: none; outline: none;box-sizing: border-box;}
+table { border-collapse:collapse; border-spacing:0; }
+img{
+    display: block;
+    width: 100%;
+}
+div,ul, ol, dl, li, p{
+    box-sizing: border-box;
+}
+
+html,body{ background: #fff; -webkit-font-smoothing: antialiased; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;}
+body {
+    font-family: "microsoft yahei", Arial, sans-serif, Helvetica;
+    font-size: 12px;
+    color: #555;
+}
+
+::-webkit-scrollbar { background: none; width: 8px; height: 8px; }
+
+::-webkit-scrollbar-thumb { background: #8da2b6; border-radius: 4px; }
+
+
+.flex-row{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.flex-column{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.home{
+    max-width: 1366px;
+    min-width: 1024px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.container {
+    width: 100%;
+    padding: 0;
+    height: 768px;
+    overflow-y: auto;
+    display: flex;
+}
+.preview.scrollHidden::-webkit-scrollbar{width:0;}
+
+.home .list{
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: auto;
+}
+.home .list .box{
+    width: 33.3%;
+    text-align: center;
+    margin-bottom: 30px;
+    
+}
+.home .list .box .img{
+    width: 320px;
+    margin: 0 auto;
+}
+.home .list .box p{
+    font-size: 24px;
+    color: #888888;
+    padding: 10px 0;
+}
+
+@media screen and (max-width: 1023px) {
+    body{
+        width: 1024px;
+    }
+    .home{
+        width: 100%;
+    }
+}

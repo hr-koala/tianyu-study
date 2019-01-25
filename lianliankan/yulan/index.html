@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>连连看</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">	
+	<link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/theme1.css" id="theme">
+	<script type="text/javascript" src="js/lib/jquery.min.js"></script>
+	<script type="text/javascript" src="js/lib/jquery-ui.js"></script>
+	<script type="text/javascript" src="js/lib/jquery.ui.touch-punch.min.js"></script>
+	<script type="text/javascript" src="js/lib/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/lib/jquery.mousewheel.min.js"></script>
+	<script type="text/javascript" src="js/lib/vue.js"></script>
+	<script type="text/javascript" src="js/app/show.js"></script>
+    <script type="text/javascript" src="js/base.js"></script>
+    <style>
+        .left {position: relative;}
+        .left .tables{position: relative;z-index: 10;}
+        .succ{z-index: 15;}
+        .canvas{position: absolute;top: -30px;left: -30px;z-index: 5;}
+    </style>
+</head>
+<body>
+
+<div id="all">
+
+
+
+
+<div class="container preview">
+<div class="main">
+    <div class="title">
+        {{ title }}
+    </div>
+    <div class="info clearFix">
+        <div class="left">
+            <table class="tables">
+                <tbody>
+                    <tr v-for="n in 5">
+                        <td class="tag1" v-for="m in 4"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <canvas id="canvas" class="canvas" width="635" height="580"></canvas>
+        </div>
+        <div class="right">
+            <div class="r-tit">
+                <span>{{num}}</span> / {{nums}}
+            </div>
+            <div class="r-main"></div>
+        </div>
+    </div>
+</div>
+<div class="floor">
+        <div class="submit" title="提交作答"></div>
+        <!-- <div class="portion" title="部分重置">部分重置</div> -->
+        <!-- <div class="show-answer" title="显示答案"></div> -->
+        <div class="reset" title="重新作答"></div>
+    </div>
+</div>
+
+
+<div class="succ"></div>
+	
+</div>
+
+
+
+	
+</body>
+</html>

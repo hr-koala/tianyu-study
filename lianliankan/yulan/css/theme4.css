@@ -1,0 +1,37 @@
+body {
+	background: url(../img/theme4/main.jpg) center no-repeat;
+}
+
+.main .title {
+    background: #B0DF79;
+}
+
+.left .tables tr .td1 {
+    background: #E0F1C4;
+    border: 1px solid #A0C671;
+}
+
+.left .tables tr .td-bd {
+    border: 3px solid #F8BD02;
+}
+
+.right{
+    background: #EEF5E5;
+    border: 1px solid #8CB857;
+}
+
+.right .r-tit span {
+    color: #EBB97A;
+}
+
+.right .r-main .r-row .r-tag {
+    border: 2px solid #8CB857;
+}
+
+.right .r-main .r-row .r-xian {
+    background: #8CB857;
+}
+
+.left .tables tr td .fanzhuan {
+    background: url('../img/icon/fanzhuan4.png') center no-repeat;
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>画廊</title>
+    <link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript" src="js/libs/jquery.min.js"></script>
+</head>
+<body>
+    <div id="all" class="home">
+        <div class="container">
+            <!--<div class="tit">{{title}}</div>-->
+            <div class="main flex-row">
+                <div class="icon icon-prev has" @click="addPrevNumFun"></div>
+                <div class="icon icon-next" @click="addNextNumFun"></div>
+
+                <div class="con-right">
+                    <div class="animate cmain">
+                        <div class="img" v-show="currentObj.optionsType === 'image'">
+                            <img :src="currentObj.optionsType === 'image' ? currentObj.optionsCon : ''" alt="">
+                            <div class="cinfo" v-html="currentObj.optionsBotCon" v-if="currentObj.optionsBotCon"></div>
+                        </div>
+                        <div class="text" v-show="currentObj.optionsType === 'text'">
+                            <div class="con" v-html="currentObj.optionsType === 'text' ? currentObj.optionsCon : ''"></div>
+                            <div class="cinfo" v-html="currentObj.optionsBotCon" v-if="currentObj.optionsBotCon"></div>
+                        </div>
+                        <div class="dongh" v-if="site.animateType === 4"></div>
+                    </div>
+                    
+                </div>
+                <div class="collapse">
+                    <img src="img/icon/icons-down.png">
+                    <img class="shouqi" src="img/icon/icons-up.png">
+                    <span>收起</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="js/libs/jquery-ui.min.js"></script>
+<script type="text/javascript" src="js/libs/vue.js"></script>
+<script type="text/javascript" src="js/app/index.js"></script>
+</html>

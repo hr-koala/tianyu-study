@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>抽卡牌</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript" src="js/lib/jquery.min.js"></script>
+    <script type="text/javascript" src="js/lib/vue.js"></script>
+    <script type="text/javascript" src="js/app/index.js"></script>
+</head>
+<body>
+<div id="all" class="home">
+    <div class="container preview">
+        <div class="main flex-column">
+            <div class="tit">{{title}}</div>
+            <div class="info">
+                <div class="list">
+                    <!-- <div class="box" :class="'b' + n" v-for="n in cardLen" :data-index="n" @click="chooseCardFun">
+                        <div class="fan"></div>
+                        <div class="zhen">
+                            <div class="img"><img src="" alt=""></div>
+                            <div class="text">
+                                <div class="inp-txt"></div>
+                            </div>
+                        </div>
+                        <div class="yuan"></div>
+                    </div> -->
+                </div>
+                <div class="huan" @click="againFun">换牌</div>
+            </div>
+        </div>
+        
+    </div>  
+</div>
+</body>
+</html>

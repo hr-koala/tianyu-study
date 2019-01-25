@@ -1,0 +1,295 @@
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td { box-sizing: border-box;margin:0; padding:0; }
+body, button, input, select, textarea { font:12px/1.5tahoma, arial, \5b8b\4f53; }
+h1, h2, h3, h4, h5, h6{ font-size:100%; }
+address, cite, dfn, em, var { font-style:normal; }
+code, kbd, pre, samp { font-family:couriernew, courier, monospace; }
+small{ font-size:12px; }
+ul, ol { list-style:none; }
+a { text-decoration:none; }
+a:hover { text-decoration:underline; }
+sup { vertical-align:text-top; }
+sub{ vertical-align:text-bottom; }
+legend { color:#000; }
+fieldset, img { border:0; }
+button, input, select, textarea { font-size:100%; border: none; outline: none;box-sizing: border-box;}
+table { border-collapse:collapse; border-spacing:0; }
+img{
+    display: block;
+    width: 100%;
+}
+div,ul, ol, dl, li, p{
+    box-sizing: border-box;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+html,body{ background: #fff; -webkit-font-smoothing: antialiased; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;}
+body {
+    font-family: "microsoft yahei", Arial, sans-serif, Helvetica;
+    font-size: 12px;
+    color: #555;
+}
+
+::-webkit-scrollbar { background: none; width: 8px; height: 8px; }
+
+::-webkit-scrollbar-thumb { background: #8da2b6; border-radius: 4px; }
+
+
+.flex-row{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.flex-column{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.home{
+    max-width: 1366px;
+    min-width: 1024px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.container {
+    width: 100%;
+    height: 768px;
+    padding: 0;
+    overflow-y: auto;
+}
+.preview.scrollHidden::-webkit-scrollbar{width:0;}
+
+
+.home .tit{
+    width: 100%;
+    padding: 20px 0;
+    text-align: center;
+    color: #353535;
+    font-size: 30px;
+}
+.home .main{
+    width: 100%;
+    padding: 30px 30px 0; 
+    height: 100%;
+}
+.home .main .info{
+    width: 100%;
+    flex: 1;
+    background: url('../img/bg.png') center bottom no-repeat;
+    -webkit-background-size: 100%;
+    background-size: 100%;
+    position: relative;
+}
+.home .main .list{
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+}
+.home .main .list .box{
+    position: absolute;
+    width: 170px;
+    height: 247px;
+    padding: 10px;
+    /* transition: all 1s; */
+    transition: top 1s, left 1s, padding 1s, height 1s;
+    /* -webkit-transition: all 1s;  */
+    cursor: pointer;
+}
+.home .main .list .box > div{
+    background: url('../img/icon_box.png') 0 0 no-repeat;
+    background-size: 958px;
+}
+.home .main .list .box .yuan{
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    height: 24px;
+    /* background: url('../img/icon/yuan.png') center bottom no-repeat;
+    -webkit-background-size: 100%;
+    background-size: 100%; */
+    background-position: 0 -718px;
+}
+.home .main .list .box .fan,
+.home .main .list .box .zhen{
+    transform-style: preserve-3d;
+    backface-visibility:hidden;
+    transition: transform 1s;
+    -webkit-transition: transform 1s; 
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+}
+.home .main .list .box .fan{
+    top: 0;
+    z-index: 5;
+    background-position: -265px 8px;
+    transform:rotateY(0);
+}
+.home .main .list .box .zhen{
+    top: 0;
+    z-index: 7;
+    background-position: 0 0;
+    transform:rotateY(-180deg);
+    padding: 22px;
+}
+
+.home .main .list .box.on .zhen{
+    transform:rotateY(0);
+}
+.home .main .list .box.on .fan{
+    transform:rotateY(-180deg);
+}
+
+.home .main .list .box .zhen .img,
+.home .main .list .box .zhen .text{
+    width: 100%;
+    height: 100%;
+    display: none;
+    
+}
+.home .main .list .box .zhen .img img{
+    width: auto;
+    max-width: 100%;
+    max-height: 100%;
+    margin: auto;
+}
+.home .main .list .box .zhen .text{
+    overflow: auto;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+.home .main .list .box .zhen .text .inp-txt{
+    margin: auto;
+    width: 100%;
+    height: auto;
+    color: #278bdf;
+    font-size: 50px;
+    min-height: 25px;
+    text-align: center;
+}
+.home .main .list .w1{
+    top: 18px;
+    left: 43%;
+}
+.home .main .list .w2{
+    top: 90px;
+    left: 25%;
+}
+.home .main .list .w3{
+    top: 160px;
+    left: 7%;
+}
+.home .main .list .w4{
+    top: 236px;
+    left: 11%;
+}
+.home .main .list .w5{
+    top: 300px;
+    left: 27%;
+}
+.home .main .list .w6{
+    top: 90px;
+    left: 61%;
+}
+.home .main .list .w7{
+    top: 160px;
+    left: 79%;
+}
+.home .main .list .w8{
+    top: 236px;
+    left: 75%;
+}
+.home .main .list .w9{
+    top: 300px;
+    left: 59.5%;
+}
+.home .main .list .w10{
+    width: 240px;
+    height: 345px;
+    top: 265px;
+    left: 40%;
+    z-index: 5;
+    padding: 2px;
+}
+
+.home .main .list .inside{
+    z-index: 1;
+}
+
+
+
+.home .main .list .middle{
+    z-index: 3;
+}
+
+
+.home .main .list .active{
+    z-index: 10;
+}
+.home .main .list .active .yuan{
+    height: 38px;
+}
+
+
+
+.home .main .list .inside .fan{
+    background-position: -483px -427px;
+}
+.home .main .list .inside:hover .fan{
+    background-position: -712px -427px;
+}
+.home .main .list .inside .yuan{
+    background-position: -572px -728px;
+}
+
+.home .main .list .middle .fan{
+    background-position: 6px -426px;
+}
+.home .main .list .middle:hover .fan{
+    background-position: -223px -426px;
+}
+.home .main .list .middle .yuan{
+    background-position: -304px -729px;
+}
+
+.home .main .list .active .fan{
+    background-position: -265px 8px;
+}
+.home .main .list .active:hover .fan{
+    background-position: -546px 8px;
+}
+
+
+.home .main .huan{
+    position: absolute;
+    width: 180px;
+    height: 56px;
+    line-height: 56px;
+    border-radius: 10px;
+    text-align: center;
+    background: #2cb6f6;
+    color: #fff;
+    font-size: 30px;
+    right: 50px;
+    bottom: 40px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+@media screen and (max-width: 1023px) {
+    body{
+        width: 1024px;
+    }
+    .home{
+        width: 100%;
+    }
+}

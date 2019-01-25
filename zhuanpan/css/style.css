@@ -1,0 +1,252 @@
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td { box-sizing: border-box;margin:0; padding:0; }
+body, button, input, select, textarea { font:12px/1.5tahoma, arial, \5b8b\4f53; }
+h1, h2, h3, h4, h5, h6{ font-size:100%; }
+address, cite, dfn, em, var { font-style:normal; }
+code, kbd, pre, samp { font-family:couriernew, courier, monospace; }
+small{ font-size:12px; }
+ul, ol { list-style:none; }
+a { text-decoration:none; }
+a:hover { text-decoration:underline; }
+sup { vertical-align:text-top; }
+sub{ vertical-align:text-bottom; }
+legend { color:#000; }
+fieldset, img { border:0; }
+button, input, select, textarea { font-size:100%; border: none; outline: none;box-sizing: border-box; background: none;}
+table { border-collapse:collapse; border-spacing:0; }
+img{
+    display: block;
+    width: 100%;
+}
+div,ul, ol, dl, li, p{
+    box-sizing: border-box;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+html,body{ background: #fff; -webkit-font-smoothing: antialiased; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;}
+body {
+    font-family: "microsoft yahei", Arial, sans-serif, Helvetica;
+    font-size: 12px;
+    color: #555;
+    /* background: #F0F0F0; */
+}
+
+::-webkit-scrollbar { background: none; width: 8px; height: 8px; }
+
+::-webkit-scrollbar-thumb { background: #8da2b6; border-radius: 4px; }
+
+
+.flex-row{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.flex-column{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.home{
+    max-width: 1366px;
+    min-width: 1024px;
+    margin: 0 auto;
+    position: relative;
+    padding: 0 40px;
+}
+
+.container {
+    width: 100%;
+    height: 768px;
+    padding: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 40px 0;
+}
+.preview.scrollHidden::-webkit-scrollbar{width:0;}
+
+
+.home .container{
+    width: 100%;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 25px;
+    position: relative;
+    padding-left: 54%;
+}
+.home .container .con-left{
+    position: absolute;
+    width: 54%;
+    top: 0;
+    left: 0;
+    padding-top: 40px;
+}
+.home .container .con-right{
+    flex: 1;
+    padding-top: 10px;
+    padding-left: 20px;
+    /* overflow: hidden; */
+    height: 100%;
+    position: relative;
+}
+.home .container .con-right .animate{
+    width: 100%;
+    display: none;
+    position: relative;
+}
+
+.home .container .con-left .tit{
+    width: 90%;
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 30px;
+    color: #353535;
+    word-break: break-all;
+}
+.home .animate .dongh{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 4;
+    display: none;
+    background: #fff;
+}
+.home .animate .dongh.dh1{
+    background: url('../img/dh1.gif') center no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+    display: block;
+}
+.home .animate .dongh.dh2{
+    background: url('../img/dh2.gif') center no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+    display: block;
+}
+
+
+.home .rotary{
+    width: 90%;
+    height: 470px;
+    position: relative;
+}
+.home .rotary canvas{
+    position: relative;
+    z-index: 1;
+}
+.home .rotary .rmain{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 5;
+}
+.home .rotary .rmain .icon-dian{
+    position: absolute;
+    width: 46px;
+    height: 65px;
+    top: -20px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background: url('../img/icon_dian.png') center no-repeat;
+    -webkit-background-size: 100%;
+    background-size: 100%;
+}
+.home .rotary .rmain .icon-refresh{
+    position: absolute;
+    width: 196px;
+    height: 196px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    border-radius: 50%;
+    border: 9px solid #65afeb;
+    background: #e6f4ff;
+    padding: 24px;
+    display: flex;
+}
+.home .rotary .rmain .icon-refresh .inp-txt{
+    width: 100%;
+    height: auto;
+    max-height: 100%;
+    overflow: auto;
+    color: #353535;
+    font-size: 24px;
+    text-align: center;
+    margin: auto;
+}
+
+.home .container .con-right .tit{
+    width: 100%;
+    background: #fff;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    font-size: 24px;
+    color: #54AA57;
+    text-align: center;
+    padding: 10px;
+    word-break: break-all;
+}
+.home .container .con-right .cmain{
+    display: flex;
+    height: 320px;
+    width: 100%;
+    margin-bottom: 10px;
+    background: #e3e2e2;
+    border-radius: 4px;
+    position: relative;
+}
+.home .container .con-right .cmain .text,
+.home .container .con-right .cmain .video,
+.home .container .con-right .cmain .audio,
+.home .container .con-right .cmain .img{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: relative;
+}
+.home .container .con-right .cmain .video video,
+.home .container .con-right .cmain .audio audio,
+.home .container .con-right .cmain .img img{
+    margin: auto;
+    width: auto;
+    max-width: 100%;
+    max-height: 100%;
+}
+.home .container .con-right .cmain .audio audio{
+    width: 80%;
+}
+.home .container .con-right .cmain .text{
+    overflow: auto;
+    padding: 12px;
+    font-size: 24px;
+    color: #888888;
+    word-break: break-all;
+}
+
+.home .container .con-right .cinfo{
+    overflow: auto;
+    padding: 12px;
+    font-size: 24px;
+    color: #888888;
+    background: #fff;
+    border-radius: 4px;
+    word-break: break-all;
+}
+
+
+@media screen and (max-width: 1023px) {
+    body{
+        width: 1024px;
+    }
+    .home{
+        width: 100%;
+    }
+}

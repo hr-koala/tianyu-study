@@ -1,0 +1,13 @@
+{
+	"theme": "2",
+	"title": "title",
+	"getUrl": "data/main.json",
+	"userMsgUrl": "",
+	"postUrl": "data/post.php",
+	"statisticsUrl": "",
+	"showStatistics": false,
+	"showAnswer": true,
+	"showCheck": true,
+	"showSubmit": true,
+	"showReset": true
+}

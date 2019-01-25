@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>比大小</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript" src="js/lib/jquery.min.js"></script>
+	<script type="text/javascript" src="js/lib/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/lib/vue.js"></script>
+	<script type="text/javascript" src="js/lib/FileSaver.min.js"></script>
+	<script type="text/javascript" src="js/app/index.js"></script>
+	<script type="text/javascript" src="js/base.js"></script>
+</head>
+<body>
+
+<div id="all">
+
+<div class="container complie">
+	<form>
+		<div class="form-group">
+			<label>题干 ( <span id="fontNum">0</span> /3000 )</label>
+			<textarea v-model="infoObj.title" id="topic" @input="textFun" class="form-control" placeholder="比较左右两边的大小，并填入正确的符号"></textarea>
+		</div>
+		<div class="form-group form-set">
+			<label>选项 ( <span id="fontNum">{{ infoObj.num }}</span> /6 )</label>
+			<span class="txt">*文字最多只能输入15个字符</span>
+			<div class="row set">
+				
+                <child v-for="n in infoObj.num" :nums="n"  v-on:remove="removeFun(n)"></child>
+                <div class="add">
+                    <div class="add-box"  @click="addFun">
+                    <span>增加选项</span>
+                    </div>
+                </div>
+              <div class="error-txt">图片格式不正确，请重新添加图片</div>
+			</div>
+            
+		</div>
+        <div class="floor-btn">
+            <button type="button" class="btn btn-primary btn-prev">预览</button>
+            <button type="button" class="btn btn-primary btn-save">保存</button>
+        </div>
+	</form>
+</div>
+
+
+</div>
+
+
+<template id="tem">
+	<div class="com col-md-6">
+		<div class="num">{{ nums }}</div>
+		<div class="box">
+			<div class="box-txt" contenteditable="true" placeholder="请输入文字"></div>
+			<div class="box-img">
+				<input type="file" class="box-file" accept="image/*" title="点击添加图片">
+				<img src="./img/font_img.png" class="img-responsive" alt="" title="点击添加图片">
+			</div>
+			<div class="box-img1">
+                <span class="box-rep"></span>
+                <div></div>
+            </div>
+		</div>
+		<div class="symbol">
+			<button type="button" class="btn btn-primary btn-sym"><span>设置符号</span></button>
+			<div class="sym-yc">
+				<ul class="sym-ul">
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+			</div>
+		</div>
+		<div class="box">
+			<div class="box-txt" contenteditable="true" placeholder="请输入文字"></div>
+			<div class="box-img">
+				<input type="file" class="box-file" accept="image/*" title="点击添加图片">
+				<img src="./img/font_img.png" class="img-responsive" alt="">
+			</div>
+			<div class="box-img1">
+                <span class="box-rep"></span>
+                <div></div>
+            </div>
+		</div>
+		<div class="box-x" v-on:click="remove"></div>
+	</div>
+</template>
+
+	
+</body>
+</html>

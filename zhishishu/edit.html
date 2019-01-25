@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>知识树</title>
+    <link rel="stylesheet" type="text/css" href="textEditor/css/spectrum.css">
+    <link rel="stylesheet" type="text/css" href="textEditor/css/textEdit.css">
+    <link rel="stylesheet" type="text/css" href="css/style_edit.css">
+    <script type="text/javascript" src="js/lib/jquery.min.js"></script>
+    
+</head>
+<body>
+    <div id="all" class="home">
+        <div class="container flex-row">
+            <div class="con-left">
+                <div class="tit"><input type="text" v-model="title" id="title" maxlength="20" value="" placeholder="知识树"></div>
+                <div class="tree">
+                    <img src="img/shu1.png" alt="">
+                    <div class="list">
+                        <div class="box" :class="['b' + n, n <= 5 ? 'leaf-l' : 'leaf-r']" v-for="n in 10" :data-id="n" :data-index="n - 1" :id="'b' + n" :data-class="n <= 5 ? 'leaf-l' : 'leaf-r'" @click="chooseLeafIndex">
+                            <div class="inp-txt">
+                                <input type="text" @input="inputLearTitle" maxlength="20" value="" placeholder="编辑内容">
+                                <div class="del" title="删除叶子内容" @click="delLeafFun"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="con-right">
+                <div class="tit">
+                    <input type="text" @input="inputOptionsTitle" name="" :value="currentObj.optionsTitle" placeholder="编辑标题">
+                    <div class="icon-edit"></div>
+                </div>
+                <div class="cmain flex-column">
+                    <div class="text" v-show="currentObj.optionsType === 'text'">
+                        <div class="content" @input="inputOptonsCon" contenteditable="true" placeholder="编辑内容">
+                        </div>
+                    </div>
+                    <div class="video" v-show="currentObj.optionsType === 'video'">
+                        <video :src="currentObj.optionsType === 'video' ? currentObj.optionsCon : ''" controls></video>
+                    </div>
+                    <div class="audio" v-show="currentObj.optionsType === 'audio'">
+                        <audio :src="currentObj.optionsType === 'audio' ? currentObj.optionsCon : ''" controls>
+                        </audio>
+                    </div>
+                    <div class="img" v-show="currentObj.optionsType === 'image'">
+                        <img :src="currentObj.optionsType === 'image' ? currentObj.optionsCon : ''" alt="">
+                        <input type="file" name="" value="" class="add-img" accept="image/*" title="点击替换图片">
+                    </div>
+                    <div class="del" v-show="currentObj.optionsType" title="删除添加的内容" @click="delOptionsType"></div>
+                    <div class="choose" v-show="!currentObj.optionsType">
+                        <ul class="flex-row">
+                            <li class="icon-txt" title="点击添加文字" @click="chooseAddTextType"></li>
+                            <li class="icon-video" title="点击添加视频">
+                                <input type="file" name="" value="" class="add-video" accept="video/*" v-show="currentIndex || currentIndex === 0">
+                            </li>
+                            <li class="icon-audio" title="点击添加音频">
+                                <input type="file" name="" value="" class="add-audio" accept="audio/*" v-show="currentIndex || currentIndex === 0">
+                            </li>
+                            <li class="icon-img" title="点击添加图片">
+                                <input type="file" name="" value="" class="add-img" accept="image/*" v-show="currentIndex || currentIndex === 0">
+                            </li>
+                        </ul>
+                        <p>点击图标添加元素</p>
+                    </div>
+                </div>
+                <div class="cinfo">
+                    <div class="icon-edit"></div>
+                    <div class="content" contenteditable="true" @input="inputOptionsText" placeholder="编辑内容"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="floor-set flex-row">
+            <div class="set-time flex-row">
+                <label class="ch-time flex-row" :class="isAutoPlayFlag ? 'on':''" for="istime">
+                    <input type="checkbox" name="" id="istime" :checked="isAutoPlayFlag" @change="changeAutoPlayFun">
+                    <span></span>
+                    <p>自动播放</p>
+                </label>
+                <div class="p2">{{playTime}}秒</div>
+                <div class="time-num flex-column">
+                    <div class="icon-jt icon-sub" @click="subTimeFun"></div>
+                    <div class="icon-jt icon-add" @click="addTimeFun"></div>
+                </div>
+            </div>
+            <div class="set-anim flex-row">
+                <div class="p1">切换动画：</div>
+                <div class="flex-row">
+                    <label :for="'anim' + index" class="ch-anim flex-row" :class="animateType == (index + 1) ? 'on':''" v-for="(item, index) in animArr">
+                        <input type="radio" :value="index + 1" @change="changeAnimType" :id="'anim' + index" name="animate-type" :checked="animateType == (index + 1)">
+                        <span></span>
+                        <p>{{item}}</p>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="floor-btn flex-row">
+            <div class="error-txt"></div>
+            <button type="button" class="btn btn-prev" @click="prevFun">预览</button>
+            <button type="button" class="btn btn-save" @click="saveFun">保存</button>
+        </div>
+
+        
+    </div>
+</body>
+
+<script type="text/javascript" src="js/lib/vue.js"></script>
+    <script type="text/javascript" src="js/lib/FileSaver.min.js"></script>
+    <script type="text/javascript" src="textEditor/js/spectrum.js"></script>
+    <script type="text/javascript" src="textEditor/js/textEdit.js"></script>
+    <script type="text/javascript" src="js/app/edit.js"></script>
+</html>

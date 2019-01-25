@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>翻牌</title>
+    <link rel="stylesheet" type="text/css" href="textEditor/css/spectrum.css">
+    <link rel="stylesheet" type="text/css" href="textEditor/css/textEdit.css">
+    <link rel="stylesheet" type="text/css" href="css/style_edit.css">
+    <script type="text/javascript" src="js/lib/jquery.min.js"></script>
+    <script type="text/javascript" src="js/lib/vue.js"></script>
+    <script type="text/javascript" src="js/lib/FileSaver.min.js"></script>
+    <script type="text/javascript" src="textEditor/js/spectrum.js"></script>
+    <script type="text/javascript" src="textEditor/js/textEdit.js"></script>
+    <script type="text/javascript" src="js/app/edit.js"></script>
+</head>
+<body>
+    <div id="all" class="home">
+        <div class="tit">
+            <input type="text" v-model="title" name="" maxlength="200" id="title" value="" placeholder="翻牌">
+            <div class="num">（{{title.length}}/200）</div>
+        </div>
+
+        <div class="main flex-row">
+            <child v-for="n in num" :nums="n" :boxw="boxWidth"></child>
+
+            <div class="box add-box flex-column" title="点击添加卡牌" @click="addNumFun" v-show="num < maxNum"  :style="'width:' + boxWidth + 'px;'">
+                <div class="icon-add"></div>
+                <p>添加</p>
+                <div class="max">最多添加{{maxNum}}张</div>
+            </div>
+        </div>
+
+        <div class="floor-btn flex-row">
+            <div class="error-txt"></div>
+            <button type="button" class="btn btn-prev" @click="prevFun">预览</button>
+            <button type="button" class="btn btn-save" @click="saveFun">保存</button>
+        </div>
+
+        
+    </div>
+
+    <template id="tem">
+        <div class="pair flex-row" :data-index="nums">
+            <div class="box zheng" :style="'width:' + boxw + 'px;'">
+                <div class="num">第{{nums}}张（正面）</div>
+                <div class="top">
+                    <div class="img" title="点击替换图片">
+                        <img src="">
+                        <input type="file" class="add-file" accept="image/*">
+                    </div> 
+                    <div class="text">
+                        <div class="inp-txt" contenteditable="true" placeholder="请输入文字"></div>
+                    </div>
+                    <div class="choose flex-column">
+                        <div class="ft flex-row">
+                            <div class="icon icon-text" title="点击添加文字"></div>
+                            <div class="icon icon-img" title="点击添加图片">
+                                <input type="file" class="add-file" accept="image/*">
+                            </div>
+                        </div>
+                        <div class="p">点击图标添加元素</div>
+                    </div>
+                    <div class="close"></div>
+                </div>
+                <div class="bot">
+                    <div class="icon-edit"></div>
+                    <!-- <div class="inp-txt" contenteditable="true" placeholder="请输入描述"></div> -->
+                    <textarea name="" class="miaos" placeholder="请输入描述" maxlength="100"></textarea>
+                    <div class="inp-num">（0/100）</div>
+                </div>
+                
+            </div>
+
+            <div class="box fan" :style="'width:' + boxw + 'px;'">
+                <div class="num">第{{nums}}张（反面）</div>
+                <div class="top">
+                    <div class="img" title="点击替换图片">
+                        <img src="">
+                        <input type="file" class="add-file" accept="image/*">
+                    </div> 
+                    <div class="text">
+                        <div class="inp-txt" contenteditable="true" placeholder="请输入文字"></div>
+                    </div>
+                    <div class="choose flex-column">
+                        <div class="ft flex-row">
+                            <div class="icon icon-text" title="点击添加文字"></div>
+                            <div class="icon icon-img" title="点击添加图片">
+                                <input type="file" class="add-file" accept="image/*">
+                            </div>
+                        </div>
+                        <div class="p">点击图标添加元素</div>
+                    </div>
+                    <div class="close"></div>
+                </div>
+                <div class="bot">
+                    <div class="icon-edit"></div>
+                    <!-- <div class="inp-txt" contenteditable="true" placeholder="请输入描述"></div> -->
+                    <textarea name="" class="miaos" placeholder="请输入描述" maxlength="100"></textarea>
+                    <div class="inp-num">（0/100）</div>
+                </div>
+                
+            </div>
+        </div>
+    </template>
+</body>
+</html>

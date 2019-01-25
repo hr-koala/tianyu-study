@@ -1,0 +1,322 @@
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td { box-sizing: border-box;margin:0; padding:0; }
+body, button, input, select, textarea { font:12px/1.5tahoma, arial, \5b8b\4f53; }
+h1, h2, h3, h4, h5, h6{ font-size:100%; }
+address, cite, dfn, em, var { font-style:normal; }
+code, kbd, pre, samp { font-family:couriernew, courier, monospace; }
+small{ font-size:12px; }
+ul, ol { list-style:none; }
+a { text-decoration:none; }
+a:hover { text-decoration:underline; }
+sup { vertical-align:text-top; }
+sub{ vertical-align:text-bottom; }
+legend { color:#000; }
+fieldset, img { border:0; }
+button, input, select, textarea { font-size:100%; border: none; outline: none;box-sizing: border-box;font-family: "microsoft yahei", Arial, sans-serif, Helvetica;}
+table { border-collapse:collapse; border-spacing:0; }
+img{
+    display: block;
+    width: 100%;
+}
+div,ul, ol, dl, li, p{
+    box-sizing: border-box;
+}
+
+html,body{ background: #fff; -webkit-font-smoothing: antialiased; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;}
+body {
+    font-family: "microsoft yahei", Arial, sans-serif, Helvetica;
+    font-size: 12px;
+    color: #555;
+    background: #F0F0F0;
+}
+
+::-webkit-scrollbar { background: none; width: 0px; height: 8px; }
+
+
+::-webkit-scrollbar-thumb { background: #8da2b6; border-radius: 4px; }
+scrollbar { background: none; width: 0px; height: 8px; }
+scrollbar-thumb { background: #8da2b6; border-radius: 4px; }
+
+
+.flex-row{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.flex-column{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.home{
+    width: 100%;
+    padding: 46px 43px;
+    min-width: 970px;
+    overflow: auto;
+    position: relative;
+}
+.home .tit{
+    width: 100%;
+    height: 60px;
+    border: 1px dashed #888888;
+    position: relative;
+    margin-bottom: 43px;
+}
+.home .tit input{
+    width: 100%;
+    height: 100%;
+    padding: 0 20px;
+    text-align: center;
+    font-size: 30px;
+    color: #353535;
+}
+.home .tit input::-webkit-input-placeholder,
+.home textarea::-webkit-input-placeholder{
+    opacity: 0.5;
+}
+.home .tit .num{
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    color: #888888;
+}
+.home .main{
+    flex-wrap: wrap;
+    margin: 0 -15px;
+    /* align-items: flex-start; */
+}
+
+.home .main .add-box{
+    justify-content: center;
+    cursor: pointer;
+    margin: 0 15px 30px;
+    height: 385px;
+    border-radius: 4px;
+    background: #E3E2E2;
+    overflow: hidden;
+    width: 22%;
+    position: relative;
+}
+.home .main .add-box .icon-add{
+    width: 120px;
+    height: 120px;
+    background: url('../img/icon_add.png') center no-repeat;
+    -webkit-background-size: 100%;
+    background-size: 100%;
+}
+.home .main .add-box p{
+    text-align: center;
+    padding-top: 10px;
+    font-size: 24px;
+    color: #888888;
+}
+.home .main .add-box .max{
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    font-size: 16px;
+    color: #888;
+}
+
+
+
+
+
+
+.pair .box{
+    margin: 0 15px 30px;
+    overflow: hidden;
+    width: 22%;
+    position: relative;
+}
+.pair .box .top{
+    width: 100%;
+    background: #E3E2E2;
+    border-radius: 4px;
+    height: 300px;
+    margin-bottom: 5px;
+    position: relative;
+}
+.pair .box .bot{
+    width: 100%;
+    height: 80px;
+    background: #fff;
+    border-radius: 4px;
+    position: relative;
+    padding: 10px;
+    padding-left: 44px;
+}
+.pair .box .img,
+.pair .box .text{
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+.pair .box .img{
+    position: relative;
+}
+.pair .box .img img{
+    margin: auto;
+    width: auto;
+    max-height: 100%;
+    max-width: 100%;
+}
+.pair .box .text{
+    padding: 10px;
+}
+.pair .box .text .inp-txt{
+    margin: auto;
+    width: 100%;
+    height: auto;
+    color: #278bdf;
+    font-size: 50px;
+    min-height: 25px;
+    text-align: center;
+}
+.pair .box .inp-txt:focus{
+    outline: none;
+}
+.pair .box .inp-txt:empty:before{
+    content: attr(placeholder);  
+    color: #999;
+}
+.pair .box .inp-txt:input:before{
+    content:none;
+}
+.pair .box .close{
+    position: absolute;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #8C939C url('../img/icon_close.png') center no-repeat;
+    -webkit-background-size: 100%;
+    background-size: 100%;
+    top: 8px;
+    right: 10px;
+    cursor: pointer;
+}
+.pair .box .choose{
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+
+}
+.pair .box .choose .ft{
+    justify-content: center;
+    margin: 0 -15px;
+    width: 100%;
+}
+.pair .box .choose .icon{
+    width: 50px;
+    height: 50px;
+    margin: 0 15px;
+    background-repeat: no-repeat;
+    background-position: center;
+    -webkit-background-size: 100%;  
+    background-size: 100%;  
+    position: relative;
+    cursor: pointer;
+}
+.pair .box .choose .icon input,
+.pair .box .img input{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+.pair .box .choose .icon-text{
+    background-image: url('../img/icon_text.png');
+}
+.pair .box .choose .icon-img{
+    background-image: url('../img/icon_img.png');
+}
+.pair .box .choose .p{
+    width: 100%;
+    font-size: 16px;
+    color: #888888;
+    padding-top: 10px;
+    text-align: center;
+}
+.pair .box .bot .icon-edit{
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    top: 10px;
+    left: 10px;
+    background: url('../img/icon_edit.png') center no-repeat;
+    -webkit-background-size: 100%;
+    background-size: 100%;
+}
+.pair .box .bot .inp-txt{
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    font-size: 24px;
+    color: #333;
+}
+.pair .box .bot .miaos{
+    width: 100%;
+    height: 100%;
+    font-size: 24px;
+    color: #333;
+    resize: none;
+}
+.pair .box .bot .inp-num{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    color: #888888;
+    font-size: 16px;
+}
+.pair .box .num{
+    width: 100%;
+    text-align: center;
+    font-size: 24px;
+    color: #888888;
+    line-height: 36px;
+}
+
+
+
+
+
+.floor-btn {
+    padding-top: 30px;
+    width: 100%;
+    justify-content: center;
+    position: relative;
+}
+
+.floor-btn button {
+    padding: 12px 50px;
+    font-weight: 500;
+    font-size: 18px;
+    letter-spacing: 2px;
+    background: #288add;
+    margin: 0 15px;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.floor-btn button:hover {
+    background: #1f81d3;
+}
+
+.error-txt {
+    position: absolute;
+    top: -5px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    height: 25px;
+    color: red;
+    text-align: center;
+    display: none;
+    line-height: 25px;
+    font-size: 14px;
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>翻牌</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript" src="js/lib/jquery.min.js"></script>
+
+</head>
+<body>
+<div id="all" class="home">
+    <div class="container preview">
+        <div class="main flex-column">
+            <div class="tit">{{title}}</div>
+            <div class="info">
+                <div class="list flex-row">
+                    <!--   -->
+                    <div class="pair" :style="'width:' + boxWidth + 'px;'" v-for="(item, index) in  site.questionList">
+                        <div class="box zheng">
+                            <div class="text" v-if="item.optionsZhengType === 'text'">
+                                <div class="inp-txt" v-html="item.optionsZhengCon"></div>
+                            </div>
+                            <div class="img" v-else>
+                                <img :src="item.optionsZhengCon" alt="">
+                            </div>
+                            <div class="decs" v-if="item.optionsZhengDes">
+                                <div class="dp">{{item.optionsZhengDes}}</div>
+                            </div>
+                            <div class="icon i1"></div>
+                        </div>
+                        <div class="box fan">
+                            <div class="text" v-if="item.optionsFanType === 'text'">
+                                <div class="inp-txt" v-html="item.optionsFanCon"></div>
+                            </div>
+                            <div class="img" v-else>
+                                <img :src="item.optionsFanCon" alt="">
+                            </div>
+                            <div class="decs" v-if="item.optionsFanDes">
+                                <div class="dp">{{item.optionsFanDes}}</div>
+                            </div>
+                            <div class="icon i2"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>  
+</div>
+</body>
+
+<script type="text/javascript" src="js/lib/vue.js"></script>
+<script type="text/javascript" src="js/app/index.js"></script>
+<script type="text/javascript" src="js/base.js"></script>
+</html>
